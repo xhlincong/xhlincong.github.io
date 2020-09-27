@@ -7077,7 +7077,12 @@
             <table>
                 <tr>
                     <td>地点</td>
-                    <td><input id="place" type="text" value="南院男浴室"></td>
+                    <td>
+                        <select name="" id="place">
+                            <option value="3">南院南浴室</option>
+                            <option value="1">北院南浴室</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>日期</td>
@@ -7096,7 +7101,7 @@
                             <option value=14>19:30 - 19:35</option>
                             <option value=15>20:00 - 20:05</option>
                             <option value=16>20:30 - 20:35</option>
-                            <option value=17>21:00 - 21:05</option>
+                            
                         </select>
                     </td>
                 </tr>
@@ -7469,10 +7474,18 @@
         17:"21:00 - 21:05"
     };
     function submit(){
-        document.getElementById('_place').innerText = document.getElementById('place').value;
+        place = document.getElementById('place').value;
+        if(place==1){
+            document.getElementById('_place').innerText = "北院男浴室";
+             code = "1-"+_t+"-"+random(1001, 1120);
+        }else{
+            document.getElementById('_place').innerText = "南院南浴室";
+             code = "3-"+_t+"-"+random(1001, 1120);
+        }
+        
         _t = document.getElementById('time').value;
         time = arr[_t];
-        code = "3-"+_t+"-"+random(1001, 1120);
+       
         date = document.getElementById('date').value;
         document.getElementById('form').style.display="none";
         shows = document.getElementsByClassName('_page2');
