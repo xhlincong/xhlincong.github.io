@@ -7477,15 +7477,13 @@
         place = document.getElementById('place').value;
         if(place==1){
             document.getElementById('_place').innerText = "北院男浴室";
-             code = "1-"+_t+"-"+random(1001, 1120);
         }else{
             document.getElementById('_place').innerText = "南院南浴室";
-             code = "3-"+_t+"-"+random(1001, 1120);
         }
         
         _t = document.getElementById('time').value;
         time = arr[_t];
-       
+       code = place+"-"+_t+"-"+random(1001, 1120);
         date = document.getElementById('date').value;
         document.getElementById('form').style.display="none";
         shows = document.getElementsByClassName('_page2');
